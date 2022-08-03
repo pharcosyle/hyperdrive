@@ -1,0 +1,39 @@
+- follow the datomic cloud docs getting started with a split stack instructions
+- Create this policy in IAM (I called it "hyperdrive-exogenesis-extra") and add it to the Datomic Compute Cloudformation template as described here: https://docs.datomic.com/cloud/operation/howto.html#update-parameter (instructions are a little out of date regarding the exact position of buttons) putting the policy name under Optional Configuration > Existing IAM managed policy for instances.
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito-idp:AdminCreateUser",
+                "cognito-idp:AdminEnableUser",
+                "cognito-idp:AdminDisableUser",
+                "cognito-idp:AdminUserGlobalSignOut"
+            ],
+            "Resource": "arn:aws:cognito-idp:us-east-2:894809534931:userpool/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail"
+            ],
+            "Resource": "arn:aws:ses:us-east-1:894809534931:identity/*"
+        }
+    ]
+}
+
+Per-env:
+- Query-group-per-env instructions
+  - follow the datomic cloud docs query group creation instructions with the following modifications:
+    - name it biome-ENV
+    - use {:env :ENV} for the Environment Map
+    - in Optional Configuration > Existing IAM managed policy put arn:aws:iam::894809534931:policy/hyperdrive-exogenesis-extra
+    - for staging restrict the max instances to 1, for production envs leave it as the default 4
+  - in galvanic and cathode index.js add another clause for preventing redirection to supercollider
+- Shared group instructions
+  - make sure the query group or pimary compute group has no environment map and does have "Existing IAM managed policy" set (as described above)
+- add the contact email address to SES by clicking the verification link sent by the setup script.
+
+Dev:
+- create an IAM user (I called mine "pharcosyle-exogenesis-local") and attach the "hyperdrive-exogenesis-extra" policy. Use this user for running the ion project locally.

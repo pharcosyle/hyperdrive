@@ -1,0 +1,13 @@
+type Query {
+  baseDb(freight: String): String @function(name: "galvanic-${env}")
+  deltaTxs(freight: String, lastSync: AWSTimestamp): String @function(name: "galvanic-${env}")
+}
+
+type Mutation {
+  megalith(freight: String): String @function(name: "galvanic-${env}")
+  tx(freight: String): String @function(name: "galvanic-${env}")
+}
+
+type Subscription {
+  onTx: String @aws_subscribe(mutations: ["tx"])
+}

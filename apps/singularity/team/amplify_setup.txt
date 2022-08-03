@@ -1,0 +1,130 @@
+- amplify init
+? Enter a name for the project continuum
+? Enter a name for the environment krush
+? Choose your default editor: Emacs (via Terminal, Mac OS only)
+? Choose the type of app that you're building javascript
+Please tell us about your project
+? What javascript framework are you using none
+? Source Directory Path:  src
+? Distribution Directory Path: out/public
+? Build Command:  npx shadow-cljs release app
+? Start Command: npx shadow-cljs watch app
+Using default provider  awscloudformation
+? Do you want to use an AWS profile? Yes
+? Please choose the profile you want to use amplify-guy-profile
+
+Amplify Console:
+- Connect App repository krush-enterprise/hyperdrive
+- Add branches master and develop
+- Environment variables: Add APP_NAME as "singularity"
+- Service Role to "amplifyconsole-backend-role" (let it walk you through creating an amplify console role if this is a new AWS account)
+- Domain management: add hyperdrive.life custom domain
+- in Build Image Settings set the amplify version to the same one installed on my machine
+- copy this into the Rewrites and Redirects editor:
+[
+    {
+        "source": "https://XXXXXX",
+        "target": "https://XXXXX",
+        "status": "302",
+        "condition": null
+    },
+    {
+        "source": "https://www.XXXXXX",
+        "target": "https://XXXXX",
+        "status": "302",
+        "condition": null
+    },
+    {
+        "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|woff2|ttf|eot|map|json)$)([^.]+$)/>",
+        "target": "/index.html",
+        "status": "200",
+        "condition": null
+    }
+]
+
+Auth:
+- amplify auth add
+? Do you want to use the default authentication and security configuration? Manual configuration
+? Select the authentication/authorization services that you want to use: User Sign-Up, Sign-In, connected with AWS IAM controls (Enables per-user Storage features for images or other content, Analytics, and more)
+? Please provide a friendly name for your resource that will be used to label this category in the project: covenant
+? Please enter a name for your identity pool. covenant_identitypool
+? Allow unauthenticated logins? (Provides scoped down permissions that you can control via AWS IAM) No
+? Do you want to enable 3rd party authentication providers in your identity pool? No
+? Please provide a name for your user pool: covenant_userpool
+? Warning: you will not be able to edit these selections. 
+? How do you want users to be able to sign in? Email
+? Do you want to add User Pool Groups? No
+? Do you want to add an admin queries API? No
+? Multifactor authentication (MFA) user login options: OFF
+? Email based user registration/forgot password: Enabled (Requires per-user email entry at registration)
+? Please specify an email verification subject: Your verification code
+? Please specify an email verification message: Your verification code is {####}
+? Do you want to override the default password policy for this User Pool? No
+? Warning: you will not be able to edit these selections. 
+? What attributes are required for signing up? (Press <space> to select, <a> to toggle all, <i> to invert selection)Email
+? Specify the app's refresh token expiration period (in days): 30
+? Do you want to specify the user attributes this app can read and write? No
+? Do you want to enable any of the following capabilities? (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Do you want to use an OAuth flow? No
+? Do you want to configure Lambda Triggers for Cognito? No
+
+API Amplify-to-Datomic Bridge Lambdas (galvanic and cathode):
+- amplify function add
+? Provide a friendly name for your resource to be used as a label for this category in the project: galvanic
+? Provide the AWS Lambda function name: galvanic
+? Choose the function runtime that you want to use: NodeJS
+? Choose the function template that you want to use: Hello World
+? Do you want to access other resources created in this project from your Lambda function? No
+? Do you want to invoke this function on a recurring schedule? No
+? Do you want to edit the local lambda function now? No
+
+GraphQL API:
+- amplify api add
+? Please select from one of the below mentioned services: GraphQL
+? Provide API name: fission
+? Choose the default authorization type for the API Amazon Cognito User Pool
+Use a Cognito user pool configured as a part of this project.
+? Do you want to configure advanced settings for the GraphQL API No, I am done.
+? Do you have an annotated GraphQL schema? Yes
+? Provide your schema file path: /Users/pharcosyle/Desktop/hyperdrive_orginal_amplify/apps/singularity/amplify/backend/api/quark/schema.graphql
+- amplify codegen add
+? Choose the code generation language target javascript
+? Enter the file name pattern of graphql queries, mutations and subscriptions src/graphql/**/*.js
+? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions Yes
+? Enter maximum statement depth [increase from default if your schema is deeply nested] 2
+
+Public REST API:
+- amplify api add
+? Please select from one of the below mentioned services: REST
+? Provide a friendly name for your resource to be used as a label for this category in the project: terraform
+? Provide a path (e.g., /items) ...
+[repeat for all paths in `handler/routes`]
+? Choose a Lambda source Use a Lambda function already added in the current Amplify project
+? Choose the Lambda function to invoke by this path cathode
+? Restrict API access No
+? Do you want to add another path? No
+
+
+Per-env:
+- terminal
+  - create a git branch based off master called env-ENV and git checkout
+  - `amplify env add ENV` and `amplify push`
+  - push to github
+- Amplify Console
+  - add a new Environment Variable override USER_BRANCH mapping Value ENV to branch env-ENV
+  - connect a new branch, go to "Edit target backend" and add the amplify env
+  - in Domain Management add a new subdomain for ENV.hyperdrive.life
+- In the env's Cognito User Pool: General settings > Policies > Only allow administrators to create users
+- Add this inline policy to the lamda roles for galvanic and cathode in the IAM roles dashboard, something like "continuumLambdaRole36112573-krush" and "continuumLambdaRole6798a98d-krush" (Summary > Permissions > Add Inline Policy), call it whatever (I did "quantum_invoke_datomic_lambda_policy"). Change the Resource part (env and warpgate/jumpgate). Use staging for the dev lambdas. Use "supercollider" for any envs running in the primary group.
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": "arn:aws:lambda:us-east-2:894809534931:function:biome-krush-warpgate"
+        }
+    ]
+}

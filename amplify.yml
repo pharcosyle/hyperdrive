@@ -1,0 +1,38 @@
+version: 1.0
+backend:
+  phases:
+    preBuild:
+      commands:
+        - cd apps/$APP_NAME
+    build:
+      commands:
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install -g npm@6.14.5
+        - npm ci
+        - JDK_VERSION=8u252
+        - JDK_VERSION_B=b09
+        - wget -q -O jdk-release https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk${JDK_VERSION}-${JDK_VERSION_B}/OpenJDK8U-jdk_x64_linux_hotspot_${JDK_VERSION}${JDK_VERSION_B}.tar.gz
+        - tar -xf jdk-release
+        - mkdir /usr/lib/jvm && mv ${JDK_VERSION}-${JDK_VERSION_B}/usr/lib/jvm/jdk-current
+        - export JAVA_HOME=/usr/lib/jvm/jdk-current
+        - export PATH=$PATH:/usr/lib/jvm/jdk-current/bin
+        - curl -o install-clojure.sh https://download.clojure.org/install/linux-install-1.10.1.536.sh
+        - chmod +x install-clojure.sh
+        - ./install-clojure.sh
+    build:
+      commands:
+        - clojure -A:release -m hyperdrive.app.build hyperdrive.$APP_NAME.frontend/bundle-config
+        - cd ../..
+        - ln -s apps/$APP_NAME/out/public artifacts_base_dir
+  artifacts:
+    baseDirectory: artifacts_base_dir
+    files:
+      - '**/*'
+  cache:
+    paths:
+      # TODO I wasn't able to make caching of jars work: - /root/.m2/repository/**/* TODO Consider also caching java an clojure. How would I make amplify USE the cache though, in fact how does it work with node_modules?
+      - node_modules/**/*

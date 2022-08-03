@@ -1,0 +1,10 @@
+{:deps {life.hyperdrive/ion {:local/root ".."} ; This project is currently nested inside `ion` but ideally this would be `life.hyperdrive/core`.
+        org.clojure/data.json {:mvn/version "1.0.0"}
+        http-kit {:mvn/version "2.4.0-alpha6"}
+        clojure-csv {:mvn/version "2.0.2"}
+        com.cognitect.aws/api {:mvn/version "0.8.445"}
+        com.cognitect.aws/endpoints {:mvn/version "1.1.11.732"}
+        com.cognitect.aws/sesv2 {:mvn/version "783.2.590.0"}
+        com.cognitect.aws/ssm {:mvn/version "789.2.611.0"}}
+ :paths ["src"]
+ :mvn/repos {"datomic-cloud" {:url "s3://datomic-releases-1fc2183a/maven/releases"}}} ; This project is currently nested inside `ion` and I guess :mvn/repos isn't inherited.

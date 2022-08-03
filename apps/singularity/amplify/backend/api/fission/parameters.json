@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "fission",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcovenant",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

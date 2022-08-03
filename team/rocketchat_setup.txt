@@ -1,0 +1,8 @@
+- Accounts: Untoggle "Allow Username Change", "Allow Email Change", "Allow Password Change"
+  - under Registration: untoggle "Send email to user when user is activated" and "Send email to user when user is deactivated"
+- General: First Channel After Login (general)
+- Messages: Enable read receipts and detailed read receipts.
+- Layout
+  - Content: Change Home Content to <p>Welcome to Hyperdrive Chat!</p> (might not be necessary with the First Channel After Login set) and delete Side Navigation Footer
+  - User Interface: Enable "Use Real Name"
+- Accounts > Iframe: toggle Enabled

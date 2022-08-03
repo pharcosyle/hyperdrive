@@ -1,0 +1,86 @@
+{
+    "krush": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-continuum-krush-55343-authRole",
+            "UnauthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-krush-55343-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-krush-55343-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-continuum-krush-55343-deployment",
+            "UnauthRoleName": "amplify-continuum-krush-55343-unauthRole",
+            "StackName": "amplify-continuum-krush-55343",
+            "StackId": "arn:aws:cloudformation:us-east-2:894809534931:stack/amplify-continuum-krush-55343/218f5d40-2c9e-11ea-8584-0a22cca2ed82",
+            "AmplifyAppId": "d1f4n10c4ifswq"
+        },
+        "categories": {
+            "auth": {
+                "covenant": {}
+            },
+            "function": {
+                "galvanic": {},
+                "cathode": {}
+            }
+        }
+    },
+    "privilege": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-continuum-privilege-30542-authRole",
+            "UnauthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-privilege-30542-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-privilege-30542-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-continuum-privilege-30542-deployment",
+            "UnauthRoleName": "amplify-continuum-privilege-30542-unauthRole",
+            "StackName": "amplify-continuum-privilege-30542",
+            "StackId": "arn:aws:cloudformation:us-east-2:894809534931:stack/amplify-continuum-privilege-30542/d34c4a00-2d4f-11ea-aece-0681d34c9248",
+            "AmplifyAppId": "d1f4n10c4ifswq"
+        },
+        "categories": {
+            "auth": {
+                "covenant": {}
+            },
+            "function": {
+                "gravityfun": {},
+                "entropyfun": {}
+            }
+        }
+    },
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-continuum-test-31851-authRole",
+            "UnauthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-test-31851-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-test-31851-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-continuum-test-31851-deployment",
+            "UnauthRoleName": "amplify-continuum-test-31851-unauthRole",
+            "StackName": "amplify-continuum-test-31851",
+            "StackId": "arn:aws:cloudformation:us-east-2:894809534931:stack/amplify-continuum-test-31851/a8ca1bc0-2d51-11ea-9586-0a3121d24df0",
+            "AmplifyAppId": "d1f4n10c4ifswq"
+        },
+        "categories": {
+            "auth": {
+                "covenant": {}
+            },
+            "function": {
+                "galvanic": {},
+                "cathode": {}
+            }
+        }
+    },
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-continuum-dev-33716-authRole",
+            "UnauthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-dev-33716-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::894809534931:role/amplify-continuum-dev-33716-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-continuum-dev-33716-deployment",
+            "UnauthRoleName": "amplify-continuum-dev-33716-unauthRole",
+            "StackName": "amplify-continuum-dev-33716",
+            "StackId": "arn:aws:cloudformation:us-east-2:894809534931:stack/amplify-continuum-dev-33716/3ba78ac0-2d54-11ea-bbd5-0ade6091f9d8",
+            "AmplifyAppId": "d1f4n10c4ifswq"
+        },
+        "categories": {
+            "auth": {
+                "covenant": {}
+            }
+        }
+    }
+}

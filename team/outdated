@@ -1,0 +1,13 @@
+#!/bin/sh
+
+brew update
+brew outdated
+brew cask outdated
+npm outdated -g
+cd ../apps/singularity/
+npm outdated
+clojure -A:outdated -e
+cd ../../ion
+clojure -A:outdated -e
+cd scripts
+clojure -A:outdated -e

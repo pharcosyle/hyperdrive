@@ -1,0 +1,17 @@
+{
+    "projectName": "continuum",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "none",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "out/public",
+            "BuildCommand": "npx shadow-cljs release app",
+            "StartCommand": "npx shadow-cljs watch app"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}

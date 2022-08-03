@@ -1,0 +1,2 @@
+{:deps {life.hyperdrive/core {:local/root ".."}
+        me.raynes/fs {:mvn/version "1.4.6"}}}

@@ -1,0 +1,26 @@
+{
+	"private": true,
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "5.13.0",
+		"aws-amplify": "3.0.16",
+		"aws-amplify-react": "4.1.15",
+		"aws-appsync": "3.0.3",
+		"bootstrap4-tagsinput-douglasanpa": "4.1.2",
+		"chart.js": "2.9.3",
+		"create-react-class": "15.6.3",
+		"dexie": "2.0.4",
+		"filestack-js": "3.7.0",
+		"flatpickr": "4.6.3",
+		"graphql-tag": "2.10.3",
+		"jquery": "3.4.1",
+		"jsbarcode": "3.11.0",
+		"pnotify": "4.0.1",
+		"react": "16.13.1",
+		"react-dom": "16.13.1",
+		"startbootstrap-sb-admin-2": "github:BlackrockDigital/startbootstrap-sb-admin-2#cfc7db04e7a39e27cf83f2fcf2bed34e3820b581"
+	},
+	"devDependencies": {
+		"shadow-cljs": "2.10.0",
+		"workbox-build": "5.0.0"
+	}
+}

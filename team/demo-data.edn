@@ -1,0 +1,400 @@
+{:type/shop
+ [{:e/id "aaaaaaaaa1"
+   :e/type :type/shop
+   :shop/name "Krush HQ"
+   :e/date 1480920828337}
+  {:e/id "aaaaaaaaa3"
+   :e/type :type/shop
+   :shop/name "Krush 101"
+   :e/date 1480920828337}
+  {:e/id "aaaaaaaaa5"
+   :e/type :type/shop
+   :shop/name "Krush 102"
+   :e/date 1480920828337}
+  {:e/id "aaaaaaaaa8"
+   :e/type :type/shop
+   :shop/name "Krush 105"
+   :e/date 1480920828337}]
+ :type/register
+ [{:e/id "bbbbbbbbb1"
+   :e/type :type/register
+   :register/name "Register 1"
+   :register/shop "aaaaaaaaa3"
+   :e/date 1480920828337}
+  {:e/id "bbbbbbbbb2"
+   :e/type :type/register
+   :register/name "Register 2"
+   :register/shop "aaaaaaaaa3"
+   :e/date 1480920828337}]
+ :type/register-count
+ [{:e/id "ccccccccc1"
+   :e/type :type/register-count
+   :register-count/register "bbbbbbbbb2"
+   :register-count/open-amounts {"rrrrrrrrr1" 72.5
+                                 "rrrrrrrrr2" 200}
+   :register-count/open-employee "ooooooooo1"
+   :register-count/open-date 1480913628337
+   :register-count/amounts {"rrrrrrrrr1" 100
+                            "rrrrrrrrr2" 200}
+   :register-count/left-in-drawer 35.5
+   :register-count/employee "ooooooooo1"
+   :register-count/notes "I have closed this register with righteous fury."
+   :e/date 1480920828337}]
+ :type/register-adjustment
+ [{:e/id "ddddddddd1"
+   :e/type :type/register-adjustment
+   :register-adjustment/type :payout
+   :register-adjustment/register "bbbbbbbbb2"
+   :register-adjustment/employee "ooooooooo1"
+   :register-adjustment/payment-type "rrrrrrrrr1"
+   :register-adjustment/amount 20
+   :register-adjustment/notes "Bob wanted twenty bucks for weed."
+   :e/date 1480917228337}]
+ :type/item
+ [{:e/id "eeeeeeeee1"
+   :e/type :type/item
+   :item/name "Snapback Hat"
+   :item/manufacturer "hhhhhhhhh9"
+   :item/category "ggggggggg2"
+   :item/price 440
+   :item/msrp-price 500
+   :item/online-price 390
+   :item/wholesale-price 230
+   :item/default-cost 50
+   :item/images ["L3hk7poiSwify4tWSolH"
+                 "4yECForRczT5XpqCX7pw"
+                 "AAktHO3SGyxSkJoI8jD2"]
+   :item/colors ["Blue" "Black" "Red"]
+   :item/sizes ["S" "M" "2XL" "3XL"]
+   :item/tags ["hot" "cle"]
+   :item/notes "What haps?"
+   :item/max-commission 4.5
+   :item/employee "ooooooooo1"
+   :e/date 1480917228337}]
+ :type/sku
+ [{:e/id "fffffffff1"
+   :e/type :type/sku
+   :sku/item "eeeeeeeee1"
+   :sku/color "Blue"
+   :sku/size "2XL"
+   :sku/upc "1450000000"
+   :sku/ean "7000000000"
+   :sku/code "215600187402"
+   :sku/style-number "0208V"
+   :sku/custom-sku-number "883-8304"
+   :sku/price 600
+   :sku/msrp-price 500
+   :sku/online-price 700
+   :sku/wholesale-price 400
+   :sku/default-cost 50
+   :sku/images ["bVZUNyy3SnyBfUqUP779"]
+   :e/date 1480917228337}
+  {:e/id "fffffffff2"
+   :e/type :type/sku
+   :sku/item "eeeeeeeee1"
+   :sku/color "Blue"
+   :sku/size "M"
+   :sku/upc "9780061782558"
+   :sku/code "215555555555"
+   :e/date 1480917228337}]
+ :type/category
+ [{:e/id "ggggggggg1"
+   :e/type :type/category
+   :category/name "Men"
+   :e/date 1480917228337}
+  {:e/id "ggggggggg2"
+   :e/type :type/category
+   :category/name "Hats"
+   :category/parent "ggggggggg1"
+   :e/date 1480917228337}]
+ :type/manufacturer
+ [{:e/id "hhhhhhhhh9"
+   :e/type :type/manufacturer
+   :manufacturer/name "Timberland"
+   :manufacturer/address "555 Park Ave"
+   :manufacturer/address2 "Apt. 546"
+   :manufacturer/city "Portland"
+   :manufacturer/state "OR"
+   :manufacturer/zipcode "12345"
+   :manufacturer/country "US"
+   :manufacturer/mobile-phone "216-555-5890"
+   :manufacturer/home-phone "216-555-5890"
+   :manufacturer/work-phone "216-555-5890"
+   :manufacturer/email "phil.coulson@gmail.com"
+   :manufacturer/email2 "phil.coulson@gmail.com"
+   :manufacturer/website "example.com"
+   :e/date 1480917228337}]
+ :type/order
+ [{:e/id "iiiiiiiii1"
+   :e/type :type/order
+   :order/status :finished
+   :order/shop "aaaaaaaaa1"
+   :order/vendor "Robin's Jean"
+   :order/items ["eeeeeeeee1"]
+   :order/costs {"eeeeeeeee1" 20}
+   :order/skus {"fffffffff1" 4
+                "fffffffff2" 4}
+   :order/received-skus {"fffffffff1" 4
+                         "fffffffff2" 4}
+   :order/expected-on 1481262828338
+   :order/notes "test order!"
+   :order/shipping 15
+   :order/due 1481262828338
+   :order/payment-method :order.payment-method/wire
+   :order/received-on 1481262828338
+   :order/employee "ooooooooo1"
+   :e/date 1481176428338}]
+ :type/transfer
+ [{:e/id "jjjjjjjjj1"
+   :e/type :type/transfer
+   :transfer/status :received
+   :transfer/from "aaaaaaaaa3"
+   :transfer/to "aaaaaaaaa8"
+   :transfer/items ["eeeeeeeee1"]
+   :transfer/skus {"fffffffff1" 1
+                   "fffffffff2" 7}
+   :transfer/received-skus {"fffffffff2" 5}
+   :transfer/notes "What."
+   :transfer/received-on 1481608428338
+   :transfer/employee "ooooooooo1"
+   :e/date 1481090028338}]
+ :type/count
+ [{:e/id "kkkkkkkkk1"
+   :e/type :type/count
+   :count/name "Shoes and hats after break-in"
+   :count/shop "aaaaaaaaa3"
+   :count/manufacturer "hhhhhhhhh9"
+   :count/category "ggggggggg2"
+   :count/items ["eeeeeeeee1"]
+   :count/counted {"fffffffff1" 1
+                   "fffffffff2" 3}
+   :count/expected {"fffffffff1" 2
+                    "fffffffff2" 8}
+   :count/employee "ooooooooo1"
+   :e/date 1481349228338}]
+ :type/customer
+ [{:e/id "lllllllll1"
+   :e/type :type/customer
+   :customer/type "mmmmmmmmm1"
+   :customer/first-name "Phil"
+   :customer/last-name "Coulson"
+   :customer/title "Senor"
+   :customer/company "Umbrella Corp."
+   :customer/birthday "2008-03-09"
+   :customer/address "555 Park Ave"
+   :customer/address2 "Apt. 546"
+   :customer/city "Portland"
+   :customer/state "OR"
+   :customer/zipcode "12345"
+   :customer/country "US"
+   :customer/mobile-phone "216-555-5890"
+   :customer/home-phone "216-555-5890"
+   :customer/work-phone "216-555-5890"
+   :customer/email "phil.coulson@gmail.com"
+   :customer/email2 "phil.coulson@gmail.com"
+   :customer/website "example.com"
+   :customer/assigned-tier 3
+   :customer/notes "Rad dude."
+   :customer/employee "ooooooooo1"
+   :e/date 1481003628338}]
+ :type/customer-type
+ [{:e/id "mmmmmmmmm1"
+   :e/type :type/customer-type
+   :customer-type/name "VIP"
+   :customer-type/discount 10
+   :e/date 1481003628338}
+  {:e/id "mmmmmmmmm2"
+   :e/type :type/customer-type
+   :customer-type/name "Wholesale"
+   :customer-type/discount 20
+   :e/date 1481176428338}]
+ :type/credit-account
+ [{:e/id "vvvvvvvvv1"
+   :e/type :type/credit-account
+   :credit-account/bot-balance 45
+   :credit-account/customer "lllllllll1"
+   :credit-account/limit 250
+   :credit-account/employee "ooooooooo1"
+   :e/date 1481176428338}]
+ :type/gift-card
+ [{:e/id "nnnnnnnnn1"
+   :e/type :type/gift-card
+   :gift-card/bot-balance 10
+   :gift-card/code "0000448709287"
+   :gift-card/customer "lllllllll1"
+   :gift-card/notes "What up yo."
+   :gift-card/employee "ooooooooo1"
+   :e/date 1481176428338}]
+ :type/employee
+ [{:e/id "ooooooooo1"
+   :e/type :type/employee
+   :employee/email "XXXXXX"
+   :employee/role :admin
+   :employee/name "XXXXXX"
+   :employee/pin "1234"
+   :employee/locked? true
+   :e/date 1481003628338}]
+ :type/timesheet
+ [{:e/id "ppppppppp1"
+   :e/type :type/timesheet
+   :timesheet/employee "ooooooooo1"
+   :timesheet/in 1481003628338
+   :timesheet/out 1481014678338}]
+ :type/sale
+ [{:e/id "qqqqqqqqq1"
+   :e/type :type/sale
+   :sale/sale-type :sale.type/in-store
+   :sale/lines [{:id "yyyyyyyyy1"
+                 :line-type :sku
+                 :sku "fffffffff1"
+                 :price 500
+                 :employee "ooooooooo1"}
+                {:id "yyyyyyyyy2"
+                 :line-type :sku
+                 :sku "fffffffff2"
+                 :price 30
+                 :employee "ooooooooo1"}]
+   :sale/items ["eeeeeeeee1"]
+   :sale/code "214768187478"     
+   :sale/bulk? true
+   :sale/transactions [{:e/id "xxxxxxxxx1"
+                        :e/type :type/transaction
+                        :transaction/line-type :type/payment-type
+                        :transaction/source "rrrrrrrrr1"
+                        :transaction/amount 300
+                        :transaction/register "bbbbbbbbb2"
+                        :transaction/employee "ooooooooo1"
+                        :e/date 1481003628338}]
+   :sale/discount 15
+   :sale/register "bbbbbbbbb2"
+   :sale/employee "ooooooooo1"
+   :e/date 1481003628338}
+  {:e/id "qqqqqqqqq2"
+   :e/type :type/sale
+   :sale/sale-type :sale.type/in-store
+   :sale/lines [{:id "yyyyyyyyy3"
+                 :line-type :sku
+                 :sku "fffffffff1"
+                 :price 80
+                 :employee "ooooooooo1"}
+                {:id "yyyyyyyyy4"
+                 :line-type :sku
+                 :sku "fffffffff2"
+                 :price 90
+                 :employee "ooooooooo1"}
+                {:id "yyyyyyyyy5"
+                 :line-type :gift-card
+                 :code "0000448709287"
+                 :price 65.5
+                 :employee "ooooooooo1"}]
+   :sale/items ["eeeeeeeee1"]
+   :sale/code "215768493011"
+   :sale/layaway? true
+   :sale/customer "lllllllll1"
+   :sale/no-tax? true
+   :sale/transactions [{:e/id "xxxxxxxxx2"
+                        :e/type :type/transaction
+                        :transaction/line-type :type/credit-account
+                        :transaction/source "vvvvvvvvv1"
+                        :transaction/amount 15
+                        :transaction/register "bbbbbbbbb2"
+                        :transaction/employee "ooooooooo1"
+                        :e/date 1481003628338}
+                       {:e/id "xxxxxxxxx3"
+                        :e/type :type/transaction
+                        :transaction/line-type :type/gift-card
+                        :transaction/source "nnnnnnnnn1"
+                        :transaction/amount 12.47
+                        :transaction/register "bbbbbbbbb2"
+                        :transaction/employee "ooooooooo1"
+                        :e/date 1481003628338}]
+   :sale/refund "wwwwwwwww1"
+   :sale/register "bbbbbbbbb2"
+   :sale/employee "ooooooooo1"
+   :e/date 1481003628338}
+  {:e/id "qqqqqqqqq3"
+   :e/type :type/sale
+   :sale/sale-type :sale.type/ecom
+   :sale/lines [{:id "yyyyyyyyy5"
+                 :line-type :sku
+                 :sku "fffffffff1"
+                 :price 100
+                 :employee "ooooooooo1"}
+                {:id "yyyyyyyyy6"
+                 :line-type :sku
+                 :sku "fffffffff2"
+                 :price 100
+                 :employee "ooooooooo1"}
+                {:id "yyyyyyyyy7"
+                 :line-type :sku
+                 :sku "fffffffff2"
+                 :price 100
+                 :employee "ooooooooo1"}]
+   :sale/items ["eeeeeeeee1"]
+   :sale/code "675839221907"
+   :sale/shipping-cost 22.78
+   :sale/transactions [{:e/id "xxxxxxxxx4"
+                        :e/type :type/transaction
+                        :transaction/line-type :type/payment-type
+                        :transaction/source "rrrrrrrrr2"
+                        :transaction/amount 700
+                        :transaction/register "bbbbbbbbb1"
+                        :transaction/employee "ooooooooo1"
+                        :e/date 1481003628338}
+                       ;; TODO copy of "xxxxxxxxx5" below, will be a ref later
+                       {:e/id "xxxxxxxxx5"
+                        :e/type :type/transaction
+                        :transaction/line-type :type/exchange
+                        :transaction/amount 400
+                        :transaction/register "bbbbbbbbb2"
+                        :transaction/employee "ooooooooo1"
+                        :e/date 1481003628338}]
+   :sale/register "bbbbbbbbb1"
+   :sale/employee "ooooooooo1"
+   :e/date 1481003628338
+   :sale/ecom-status :not-shipped
+   :sale/shopify-order-id 4294820069458}]
+ :type/refund
+ [{:e/id "wwwwwwwww1"
+   :e/type :type/refund
+   :refund/sale-lines ["yyyyyyyyy1"]
+   :refund/transactions [{:e/id "xxxxxxxxx5"
+                          :e/type :type/transaction
+                          :transaction/line-type :type/exchange
+                          :transaction/amount 400
+                          :transaction/register "bbbbbbbbb2"
+                          :transaction/employee "ooooooooo1"
+                          :e/date 1481003628338}
+                         {:e/id "xxxxxxxxx6"
+                          :e/type :type/transaction
+                          :transaction/line-type :type/payment-type
+                          :transaction/source "rrrrrrrrr2"
+                          :transaction/amount 100
+                          :transaction/register "bbbbbbbbb2"
+                          :transaction/employee "ooooooooo1"
+                          :e/date 1481003628338}]
+   :refund/register "bbbbbbbbb2"
+   :refund/employee "ooooooooo1"
+   :e/date 1481003628338}]
+ :type/payment-type
+ [{:e/id "rrrrrrrrr1"
+   :e/type :type/payment-type
+   :payment-type/name "Credit Card"
+   :e/date 1481003628338}
+  {:e/id "rrrrrrrrr2"
+   :e/type :type/payment-type
+   :payment-type/name "Check"
+   :e/date 1481003628338}]
+ :type/active-register
+ [{:e/id "ttttttttt1"
+   :e/type :type/active-register
+   :active-register/register "bbbbbbbbb1"
+   :active-register/amounts {"rrrrrrrrr1" 300
+                             "rrrrrrrrr2" 400}
+   :active-register/employee "ooooooooo1"
+   :active-register/activated 1481172828337}]
+ :type/clock
+ [{:e/id "uuuuuuuuu1"
+   :e/type :type/clock
+   :clock/employee "ooooooooo2"
+   :clock/in 1489125228338}]}

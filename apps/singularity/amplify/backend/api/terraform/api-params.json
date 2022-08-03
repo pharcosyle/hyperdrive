@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/shopify-webhooks",
+            "lambdaFunction": "cathode",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "terraform",
+    "apiName": "terraform",
+    "functionArns": [
+        {
+            "lambdaFunction": "cathode"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-continuum-dev-33716-authRole",
+        "unAuthRoleName": "amplify-continuum-dev-33716-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "cathode",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "ecb7835c"
+}

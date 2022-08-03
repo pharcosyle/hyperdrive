@@ -1,0 +1,14 @@
+#+title: Readme
+
+* Hyperdrive
+A somewhat extensive point-of-sale and inventory management application built with a suite of very Clojure-centric tools. I made this in part to teach myself this stack, perhaps it will be a useful reference to others walking the same road.
+** The Stack
+*** Frontend
+- Languages :: Clojurescript, Javascript
+- Build :: =shadow-cljs=
+- UI :: Reagent, Re-frame
+- Other :: Datascript
+*** Backend
+- Languages :: Clojure
+- DB :: Datomic
+- Deployment environment / infrastructure :: AWS

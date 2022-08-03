@@ -1,0 +1,15 @@
+{:builds {:app {:target :browser
+                :output-dir "out/public/js"
+                :asset-path "/js"
+                :compiler-options {:infer-externs :auto
+                                   :output-feature-set :es6}
+                :modules {:shared {:entries []}
+                          :print {:entries [hyperdrive.singularity.modules.print]
+                                  :depends-on #{:shared}}}
+                :dev {:modules {:main {:entries [hyperdrive.singularity.dev]
+                                       :depends-on #{:shared}}}
+                      :compiler-options {:external-config {:devtools/config {:features-to-install [:formatters :hints]}}}}
+                :release {:modules {:main {:entries [hyperdrive.singularity.prod]
+                                           :depends-on #{:shared}}}}}}
+ :deps {:aliases [:dev]}
+ :dev-http {3000 "out/public"}}

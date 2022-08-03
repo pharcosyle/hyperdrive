@@ -1,0 +1,6 @@
+{:app-name "neutrino"
+ :allow []
+ :lambdas {:warpgate
+           {:fn hyperdrive.ion.handler/warpgate}
+           :jumpgate
+           {:fn hyperdrive.ion.handler/jumpgate}}}
